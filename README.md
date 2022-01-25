@@ -1,24 +1,25 @@
-# beer-test-vue
+# Проект: beer-test-vue
 
-## Project setup
-```
-npm install
-```
+## Технологии
+html
+css
+javascript
+vue
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Функционал:
+Получение и отображение со сторонних API персонажа и пива.
+Если пиво не устраивает - меняем с помощью нажатия на кнопку "Другое"
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Как использовать
+Для ознакомления посетите сайт: https://evgenii2.github.io/beer-test-vue/
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Запуск рабочей сборки
+Скачайте проект
+При помощи терминала перейдите в папку проекта и выполните команды npm install и npm run serve.
+Страница автоматически откроется в браузере по умолчанию
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Запуск финальной сборки
+Скачайте проект
+При помощи терминала перейдите в папку проекта и выполните команды npm install и npm run build.
+В корне проекта появится папка "dist", в ней находятся конечные файлы.
+Работосопособность проверена в Google Chrome.
