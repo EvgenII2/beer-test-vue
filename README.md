@@ -1,10 +1,10 @@
 # Проект: beer-test-vue
 
 ## Технологии
-html
-css
-javascript
-vue
+**html
+*css
+*javascript
+*vue
 
 ## Функционал:
 Получение и отображение со сторонних API персонажа и пива.
