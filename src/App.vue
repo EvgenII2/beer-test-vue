@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <h1>Тестовое задание компании "Банда умников"</h1>
-    <beer-card />
-    <man-card />
+    <main-component />
   </div>
 </template>
 
 <script>
-import BeerCard from "./components/BeerCard.vue";
-import ManCard from "./components/ManCard.vue";
+import MainComponent from "./components/MainComponent.vue";
 
 export default {
   name: "App",
   components: {
-    BeerCard,
-    ManCard,
+    MainComponent,
   },
 };
 </script>
@@ -26,6 +22,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  min-width: 320px;
   max-width: 1200px;
   margin: 60px auto 0;
   background-color: #b4bcc4;
