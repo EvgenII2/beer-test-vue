@@ -1,20 +1,17 @@
 <template>
   <div id="app">
-    <h1>Тестовое задание компании "Банда умников"</h1>
-    <beer-card />
-    <man-card />
+    <h1>А не выпить ли мне пива?</h1>
+    <main-component />
   </div>
 </template>
 
 <script>
-import BeerCard from "./components/BeerCard.vue";
-import ManCard from "./components/ManCard.vue";
+import MainComponent from "./components/MainComponent.vue";
 
 export default {
   name: "App",
   components: {
-    BeerCard,
-    ManCard,
+    MainComponent,
   },
 };
 </script>
