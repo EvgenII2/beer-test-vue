@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>А не выпить ли мне пива?</h1>
     <main-component />
   </div>
 </template>

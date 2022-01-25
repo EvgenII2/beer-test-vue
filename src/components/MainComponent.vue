@@ -1,6 +1,7 @@
 <template>
   <div class="main-component">
     <beer-card />
+    <h1 class="main-component__title">А не выпить ли мне пива?</h1>
     <man-card />
   </div>
 </template>
@@ -21,8 +22,14 @@ export default {
 <style scoped>
 .main-component {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+}
+.main-component__title {
+  margin: 0;
+  padding: 0;
 }
 </style>

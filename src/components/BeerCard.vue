@@ -75,11 +75,13 @@ export default {
 
 <style scoped>
 .beer-card {
+  padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 550px;
+  border: 1px solid black;
+  border-radius: 15px;
 }
 .beer-card__image {
   max-width: 250px;
@@ -101,7 +103,7 @@ export default {
   font-size: 20px;
   margin-bottom: 10px;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 120px 400px;
 }
 .beer-card__list-item:last-of-type {
   margin-bottom: 0px;
