@@ -80,7 +80,7 @@ export default {
   },
   computed: {
     getYeast() {
-      return this.beer.yeast.split("-")[1].trim();
+      return this.beer.yeast?.split("-")[1].trim();
     },
   },
   mounted: function () {
