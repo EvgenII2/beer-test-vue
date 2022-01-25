@@ -29,7 +29,7 @@
         <li class="man-card__list-item">
           <span class="man-card__list-item-title">Должность:</span>
           <span class="man-card__list-item-value">{{
-            man.employment.title
+            man.employment ? man.employment.title : "none"
           }}</span>
         </li>
       </ul>
@@ -54,7 +54,6 @@ export default {
         .getData()
         .then((data) => {
           this.man = data;
-          console.log(this.man);
         })
         .catch((err) => console.log("Error: " + err));
     },
@@ -67,14 +66,16 @@ export default {
       return `${this.man.address?.state}, ${this.man.address?.city}, ${this.man.address?.street_address}`;
     },
     getBirthdayDate() {
-      const options = {
+      const DATE_OPTIONS = {
         year: "numeric",
         month: "long",
         day: "numeric",
       };
-      const date = new Date(this.man.date_of_birth);
-      console.log(date);
-      return date.toLocaleDateString("ru-RU", options);
+      const LOCAL = "ru-RU";
+      return new Date(this.man.date_of_birth).toLocaleDateString(
+        LOCAL,
+        DATE_OPTIONS
+      );
     },
   },
   mounted: function () {
@@ -118,10 +119,11 @@ export default {
   margin-bottom: 0px;
 }
 .man-card__list-item-title {
+  margin: auto 0;
   font-weight: 700;
 }
 .man-card__list-item-value {
-margin: auto 0;
+  margin: auto 0;
 }
 .man-card__button {
   width: 80%;

@@ -36,7 +36,12 @@
           <span class="beer-card__list-item-value">{{ beer.yeast }}</span>
         </li>
       </ul>
-      <button class="beer-card__button" type="button" @click="onClick">
+      <button
+        class="beer-card__button"
+        type="button"
+        @click="onClick"
+        :disabled="isLoading"
+      >
         Другое
       </button>
     </div>
@@ -51,6 +56,7 @@ export default {
   data() {
     return {
       beer: {},
+      isLoading: false,
     };
   },
   methods: {
@@ -58,13 +64,17 @@ export default {
       this.getBeer();
     },
     getBeer() {
+      this.isLoading = true;
       beerApi
         .getData()
         .then((data) => {
           this.beer = data;
-          console.log(this.beer);
+          this.isLoading = false;
         })
-        .catch((err) => console.log("Error: " + err));
+        .catch((err) => {
+          console.log("Error: " + err);
+          this.isLoading = false;
+        });
     },
   },
   mounted: function () {
@@ -115,12 +125,12 @@ export default {
   width: 80%;
   font-size: 20px;
   padding: 5px;
-  background-color: rgb(142, 155, 154);
+  background-color: #909e9d;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .beer-card__button:hover {
-  background-color: rgb(177, 184, 183);
+  background-color: #bbc5c4;
 }
 </style>
