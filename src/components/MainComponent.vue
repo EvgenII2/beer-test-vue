@@ -32,4 +32,10 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+@media (max-width: 621px) {
+  .main-component__title {
+    font-size: 20px;
+  }
+}
 </style>

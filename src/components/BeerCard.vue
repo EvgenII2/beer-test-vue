@@ -33,7 +33,7 @@
         </li>
         <li class="beer-card__list-item">
           <span class="beer-card__list-item-title">Дрожжи:</span>
-          <span class="beer-card__list-item-value">{{ beer.yeast }}</span>
+          <span class="beer-card__list-item-value">{{ getYeast }}</span>
         </li>
       </ul>
       <button
@@ -45,6 +45,7 @@
         Другое
       </button>
     </div>
+    <img class="beer-card__image" src="../assets/beer-image.png" />
   </div>
 </template>
 
@@ -77,6 +78,11 @@ export default {
         });
     },
   },
+  computed: {
+    getYeast() {
+      return this.beer.yeast.split("-")[1].trim();
+    },
+  },
   mounted: function () {
     this.getBeer();
   },
@@ -88,13 +94,13 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 15px;
 }
 .beer-card__image {
-  max-width: 250px;
+  max-width: 25%;
 }
 .beer-card__info {
   text-align: left;
@@ -102,7 +108,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 20px;
+  row-gap: 25px;
 }
 .beer-card__list {
   margin: 0;
@@ -113,7 +119,8 @@ export default {
   font-size: 20px;
   margin-bottom: 10px;
   display: grid;
-  grid-template-columns: 120px 400px;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 15px;
 }
 .beer-card__list-item:last-of-type {
   margin-bottom: 0px;
@@ -123,14 +130,40 @@ export default {
 }
 .beer-card__button {
   width: 80%;
-  font-size: 20px;
+  font-size: 19px;
   padding: 5px;
-  background-color: #909e9d;
-  border: none;
+  background-color: transparent;
+  border: 1px solid #000;
   border-radius: 5px;
   cursor: pointer;
 }
 .beer-card__button:hover {
   background-color: #bbc5c4;
+}
+@media (max-width: 901px) {
+  .beer-card__list-item {
+    font-size: 17px;
+    text-shadow: 1px 1px 1px #fff;
+  }
+  .beer-card__button {
+    font-size: 16px;
+  }
+  .beer-card__image {
+    display: none;
+  }
+  .beer-card__info {
+    background-image: url("../assets/beer-image.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 621px) {
+  .beer-card__list-item {
+    font-size: 14px;
+  }
+  .beer-card__button {
+    font-size: 13px;
+  }
 }
 </style>

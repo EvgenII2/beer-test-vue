@@ -90,9 +90,10 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  column-gap: 10px;
 }
 .man-card__image {
-  max-width: 250px;
+  /* max-width: 250px; */
   background-color: white;
   border-radius: 30px;
 }
@@ -136,5 +137,25 @@ export default {
 }
 .man-card__button:hover {
   background-color: rgb(177, 184, 183);
+}
+
+@media (max-width: 901px) {
+  .man-card {
+    flex-direction: column-reverse;
+    row-gap: 20px;
+  }
+  .man-card__image {
+    /* max-width: 80%; */
+  }
+}
+@media (max-width: 621px) {
+  .man-card__list-item-title {
+    display: none;
+  }
+  .man-card__list-item {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>
