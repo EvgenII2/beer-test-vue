@@ -1,5 +1,5 @@
 <template>
-  <div class="man-card">
+  <div class="man-card" v-if="isLoading">
     <div class="man-card__info">
       <ul class="man-card__list">
         <li class="man-card__list-item">
@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       man: {},
+      isLoading: false,
     };
   },
   methods: {
@@ -54,8 +55,12 @@ export default {
         .getData()
         .then((data) => {
           this.man = data;
+          this.isLoading = true;
         })
-        .catch((err) => console.log("Error: " + err));
+        .catch((err) => {
+          this.isLoading = false;
+          console.log("Error: " + err);
+        });
     },
   },
   computed: {
